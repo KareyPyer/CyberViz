@@ -1,0 +1,455 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="900" height="620" font-family="'Courier New', Courier, monospace">
+  <defs>
+    <!-- Background grid -->
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1a2a1a" stroke-width="0.5"/>
+    </pattern>
+    <!-- Wire colors -->
+    <marker id="arrow-red" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <circle cx="3" cy="3" r="2" fill="#ff4444"/>
+    </marker>
+    <marker id="arrow-blk" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <circle cx="3" cy="3" r="2" fill="#555"/>
+    </marker>
+    <marker id="dot-cyan" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <circle cx="3" cy="3" r="2.5" fill="#00e5ff"/>
+    </marker>
+    <marker id="dot-yellow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <circle cx="3" cy="3" r="2.5" fill="#ffeb3b"/>
+    </marker>
+    <marker id="dot-green" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <circle cx="3" cy="3" r="2.5" fill="#69ff47"/>
+    </marker>
+    <marker id="dot-orange" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <circle cx="3" cy="3" r="2.5" fill="#ff9800"/>
+    </marker>
+    <marker id="dot-pink" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <circle cx="3" cy="3" r="2.5" fill="#ff80ab"/>
+    </marker>
+    <marker id="dot-white" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <circle cx="3" cy="3" r="2.5" fill="#e0e0e0"/>
+    </marker>
+    <!-- Glow filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-strong" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- PCB texture -->
+    <pattern id="pcb" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#0d2b0d"/>
+      <line x1="0" y1="4" x2="8" y2="4" stroke="#112e11" stroke-width="0.3"/>
+      <line x1="4" y1="0" x2="4" y2="8" stroke="#112e11" stroke-width="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- BACKGROUND                                              -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect width="900" height="620" fill="#080f08"/>
+  <rect width="900" height="620" fill="url(#grid)"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="900" height="42" fill="#0a1a0a"/>
+  <line x1="0" y1="42" x2="900" y2="42" stroke="#00e5ff" stroke-width="1" opacity="0.4"/>
+  <text x="450" y="26" text-anchor="middle" fill="#00e5ff" font-size="15" font-weight="bold" letter-spacing="4" filter="url(#glow)">VISION AID — SCHÉMA DE CÂBLAGE</text>
+  <text x="450" y="38" text-anchor="middle" fill="#2a6a2a" font-size="8" letter-spacing="3">ESP32-WROVER-E  ·  TFT ST7735  ·  OV2640  ·  3× BOUTONS</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- ESP32-WROVER-E BOARD (centre)                          -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <g id="esp32">
+    <!-- PCB body -->
+    <rect x="330" y="80" width="240" height="430" rx="8" fill="url(#pcb)" stroke="#1a4a1a" stroke-width="2"/>
+    <rect x="330" y="80" width="240" height="430" rx="8" fill="none" stroke="#2d7a2d" stroke-width="1" opacity="0.6"/>
+
+    <!-- Module WROVER on top -->
+    <rect x="365" y="92" width="170" height="90" rx="4" fill="#0a1f0a" stroke="#1e5c1e" stroke-width="1.5"/>
+    <rect x="375" y="98" width="150" height="30" rx="2" fill="#0f280f" stroke="#2a6a2a" stroke-width="0.8"/>
+    <!-- Antenna stub -->
+    <rect x="500" y="92" width="24" height="12" rx="2" fill="#0a1a0a" stroke="#2a6a2a" stroke-width="1"/>
+    <!-- Shield holes -->
+    <circle cx="370" cy="97" r="2" fill="#000" stroke="#2a6a2a" stroke-width="0.5"/>
+    <circle cx="530" cy="97" r="2" fill="#000" stroke="#2a6a2a" stroke-width="0.5"/>
+    <circle cx="370" cy="177" r="2" fill="#000" stroke="#2a6a2a" stroke-width="0.5"/>
+    <circle cx="530" cy="177" r="2" fill="#000" stroke="#2a6a2a" stroke-width="0.5"/>
+    <text x="450" y="118" text-anchor="middle" fill="#4aaa4a" font-size="8" letter-spacing="1">ESP32-WROVER-E</text>
+    <text x="450" y="130" text-anchor="middle" fill="#2a6a2a" font-size="7">ESPRESSIF</text>
+    <text x="450" y="155" text-anchor="middle" fill="#2a6a2a" font-size="6.5">4MB PSRAM · WiFi · BT</text>
+    <text x="450" y="165" text-anchor="middle" fill="#1a4a1a" font-size="6">MGN4R8</text>
+
+    <!-- Camera FPC connector -->
+    <rect x="390" y="390" width="120" height="18" rx="2" fill="#1a1a2a" stroke="#3a3a6a" stroke-width="1"/>
+    <text x="450" y="402" text-anchor="middle" fill="#6a6aaa" font-size="7" letter-spacing="1">OV2640 FPC ←INTÉGRÉ→</text>
+
+    <!-- USB-C -->
+    <rect x="425" y="488" width="50" height="16" rx="3" fill="#1a1a1a" stroke="#444" stroke-width="1.5"/>
+    <text x="450" y="499" text-anchor="middle" fill="#666" font-size="6.5">USB-C</text>
+
+    <!-- BOOT button -->
+    <rect x="360" y="488" width="30" height="14" rx="2" fill="#1a2a1a" stroke="#2a6a2a" stroke-width="1"/>
+    <text x="375" y="497" text-anchor="middle" fill="#4aaa4a" font-size="5.5">BOOT</text>
+    <text x="375" y="505" text-anchor="middle" fill="#2a5a2a" font-size="5">GPIO0</text>
+
+    <!-- EN button -->
+    <rect x="510" y="488" width="30" height="14" rx="2" fill="#1a2a1a" stroke="#2a6a2a" stroke-width="1"/>
+    <text x="525" y="497" text-anchor="middle" fill="#4aaa4a" font-size="5.5">EN</text>
+
+    <!-- Label principal -->
+    <text x="450" y="470" text-anchor="middle" fill="#1e5c1e" font-size="9" letter-spacing="2">FREENOVE</text>
+    <text x="450" y="482" text-anchor="middle" fill="#1a4a1a" font-size="7">ESP32-WROVER</text>
+
+    <!-- ── Broches GAUCHE (GPIO côté gauche) ── -->
+    <!-- 20 pins, de y=200 à y=440, pitch=12px -->
+
+    <!-- 3.3V -->
+    <rect x="316" y="198" width="14" height="8" rx="1" fill="#ff4444" opacity="0.8"/>
+    <text x="328" y="205" text-anchor="end" fill="#888" font-size="7" x="310">3V3</text>
+    <text x="308" y="205" text-anchor="end" fill="#555" font-size="6.5">3.3V</text>
+
+    <!-- GND -->
+    <rect x="316" y="210" width="14" height="8" rx="1" fill="#333" opacity="0.9"/>
+    <text x="308" y="217" text-anchor="end" fill="#555" font-size="6.5">GND</text>
+
+    <!-- GPIO 13 MOSI -->
+    <rect x="316" y="222" width="14" height="8" rx="1" fill="#00e5ff" opacity="0.7"/>
+    <text x="308" y="229" text-anchor="end" fill="#555" font-size="6.5">GPIO13</text>
+
+    <!-- GPIO 14 SCLK -->
+    <rect x="316" y="234" width="14" height="8" rx="1" fill="#ffeb3b" opacity="0.8"/>
+    <text x="308" y="241" text-anchor="end" fill="#555" font-size="6.5">GPIO14</text>
+
+    <!-- GPIO 15 CS -->
+    <rect x="316" y="246" width="14" height="8" rx="1" fill="#ff9800" opacity="0.8"/>
+    <text x="308" y="253" text-anchor="end" fill="#555" font-size="6.5">GPIO15</text>
+
+    <!-- GPIO 16 RST -->
+    <rect x="316" y="258" width="14" height="8" rx="1" fill="#69ff47" opacity="0.8"/>
+    <text x="308" y="265" text-anchor="end" fill="#555" font-size="6.5">GPIO16</text>
+
+    <!-- GPIO 17 D/C -->
+    <rect x="316" y="270" width="14" height="8" rx="1" fill="#ff80ab" opacity="0.8"/>
+    <text x="308" y="277" text-anchor="end" fill="#555" font-size="6.5">GPIO17</text>
+
+    <!-- GPIO 5 BTN_PREV -->
+    <rect x="316" y="294" width="14" height="8" rx="1" fill="#e0e0e0" opacity="0.6"/>
+    <text x="308" y="301" text-anchor="end" fill="#555" font-size="6.5">GPIO5</text>
+
+    <!-- GPIO 2 BTN_PARAM -->
+    <rect x="316" y="306" width="14" height="8" rx="1" fill="#e0e0e0" opacity="0.6"/>
+    <text x="308" y="313" text-anchor="end" fill="#555" font-size="6.5">GPIO2</text>
+
+    <!-- GND bas -->
+    <rect x="316" y="330" width="14" height="8" rx="1" fill="#333" opacity="0.9"/>
+    <text x="308" y="337" text-anchor="end" fill="#555" font-size="6.5">GND</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TFT ST7735 (gauche)                                    -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <g id="tft">
+    <!-- PCB rouge -->
+    <rect x="48" y="160" width="130" height="200" rx="6" fill="#2a0505" stroke="#8b1a1a" stroke-width="1.5"/>
+    <rect x="48" y="160" width="130" height="200" rx="6" fill="none" stroke="#cc2222" stroke-width="0.8" opacity="0.5"/>
+
+    <!-- Écran LCD -->
+    <rect x="62" y="172" width="102" height="120" rx="3" fill="#050a15"/>
+    <rect x="64" y="174" width="98" height="116" rx="2" fill="#0a1a2a" stroke="#1a3a5a" stroke-width="0.5"/>
+    <!-- Reflet écran -->
+    <rect x="66" y="176" width="40" height="10" rx="1" fill="#1a3a6a" opacity="0.3"/>
+    <text x="113" y="225" text-anchor="middle" fill="#1a4a7a" font-size="8">TFT 1.8"</text>
+    <text x="113" y="237" text-anchor="middle" fill="#0d3060" font-size="7">128 × 160</text>
+    <text x="113" y="249" text-anchor="middle" fill="#0d3060" font-size="6.5">ST7735</text>
+    <text x="113" y="263" text-anchor="middle" fill="#0d2545" font-size="6">RGB565</text>
+
+    <!-- Connecteur (broches jaunes) -->
+    <rect x="55" y="303" width="118" height="14" rx="2" fill="#1a1000" stroke="#4a3000" stroke-width="1"/>
+
+    <!-- 8 broches -->
+    <!-- Pin 1: RST -->
+    <rect x="59" y="307" width="7" height="10" rx="1" fill="#69ff47" opacity="0.9"/>
+    <text x="62" y="328" text-anchor="middle" fill="#69ff47" font-size="6.5" font-weight="bold">RST</text>
+    <text x="62" y="337" text-anchor="middle" fill="#2a6a2a" font-size="5.5">p1</text>
+
+    <!-- Pin 2: CS -->
+    <rect x="70" y="307" width="7" height="10" rx="1" fill="#ff9800" opacity="0.9"/>
+    <text x="73" y="328" text-anchor="middle" fill="#ff9800" font-size="6.5" font-weight="bold">CS</text>
+    <text x="73" y="337" text-anchor="middle" fill="#6a4000" font-size="5.5">p2</text>
+
+    <!-- Pin 3: D/C -->
+    <rect x="81" y="307" width="7" height="10" rx="1" fill="#ff80ab" opacity="0.9"/>
+    <text x="84" y="328" text-anchor="middle" fill="#ff80ab" font-size="6.5" font-weight="bold">D/C</text>
+    <text x="84" y="337" text-anchor="middle" fill="#6a2040" font-size="5.5">p3</text>
+
+    <!-- Pin 4: DIN -->
+    <rect x="92" y="307" width="7" height="10" rx="1" fill="#00e5ff" opacity="0.9"/>
+    <text x="95" y="328" text-anchor="middle" fill="#00e5ff" font-size="6.5" font-weight="bold">DIN</text>
+    <text x="95" y="337" text-anchor="middle" fill="#005a6a" font-size="5.5">p4</text>
+
+    <!-- Pin 5: CLK -->
+    <rect x="103" y="307" width="7" height="10" rx="1" fill="#ffeb3b" opacity="0.9"/>
+    <text x="106" y="328" text-anchor="middle" fill="#ffeb3b" font-size="6.5" font-weight="bold">CLK</text>
+    <text x="106" y="337" text-anchor="middle" fill="#6a5a00" font-size="5.5">p5</text>
+
+    <!-- Pin 6: VCC -->
+    <rect x="114" y="307" width="7" height="10" rx="1" fill="#ff4444" opacity="0.9"/>
+    <text x="117" y="328" text-anchor="middle" fill="#ff4444" font-size="6.5" font-weight="bold">VCC</text>
+    <text x="117" y="337" text-anchor="middle" fill="#6a1010" font-size="5.5">p6</text>
+
+    <!-- Pin 7: LED -->
+    <rect x="125" y="307" width="7" height="10" rx="1" fill="#ffaa00" opacity="0.9"/>
+    <text x="128" y="328" text-anchor="middle" fill="#ffaa00" font-size="6.5" font-weight="bold">LED</text>
+    <text x="128" y="337" text-anchor="middle" fill="#6a4400" font-size="5.5">p7</text>
+
+    <!-- Pin 8: GND -->
+    <rect x="136" y="307" width="7" height="10" rx="1" fill="#555" opacity="0.9"/>
+    <text x="139" y="328" text-anchor="middle" fill="#888" font-size="6.5" font-weight="bold">GND</text>
+    <text x="139" y="337" text-anchor="middle" fill="#444" font-size="5.5">p8</text>
+
+    <!-- Label -->
+    <text x="113" y="356" text-anchor="middle" fill="#8b1a1a" font-size="8" letter-spacing="1">ST7735</text>
+    <text x="113" y="367" text-anchor="middle" fill="#5a1010" font-size="7">TFT SPI 1.8"</text>
+
+    <!-- Chip IC sur le dos -->
+    <rect x="75" y="373" width="40" height="16" rx="2" fill="#111" stroke="#333" stroke-width="0.8"/>
+    <text x="95" y="383" text-anchor="middle" fill="#444" font-size="5.5">ST7735S</text>
+
+    <!-- Resistor LED -->
+    <rect x="105" y="373" width="22" height="8" rx="2" fill="#1a1000" stroke="#4a3000" stroke-width="0.8"/>
+    <text x="116" y="379" text-anchor="middle" fill="#6a5000" font-size="5">33Ω</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- BOUTONS (bas gauche)                                   -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <g id="buttons">
+    <text x="90" y="430" text-anchor="middle" fill="#2a6a2a" font-size="8" letter-spacing="2">BOUTONS</text>
+
+    <!-- BTN_NEXT = GPIO 0 (BOOT) déjà sur carte -->
+    <rect x="48" y="437" width="88" height="28" rx="4" fill="#0a1f0a" stroke="#1e5c1e" stroke-width="1"/>
+    <circle cx="72" cy="451" r="8" fill="#0f280f" stroke="#4aaa4a" stroke-width="1.5"/>
+    <circle cx="72" cy="451" r="4" fill="#2a6a2a"/>
+    <text x="90" y="447" fill="#4aaa4a" font-size="6.5" font-weight="bold">BTN_NEXT</text>
+    <text x="90" y="457" fill="#2a5a2a" font-size="6">GPIO 0 = BOOT ★</text>
+
+    <!-- BTN_PREV = GPIO 5 -->
+    <rect x="48" y="472" width="88" height="28" rx="4" fill="#0a1f0a" stroke="#1e5c1e" stroke-width="1"/>
+    <circle cx="72" cy="486" r="8" fill="#0f280f" stroke="#aaaaaa" stroke-width="1.5"/>
+    <circle cx="72" cy="486" r="4" fill="#2a4a2a"/>
+    <text x="90" y="482" fill="#aaaaaa" font-size="6.5" font-weight="bold">BTN_PREV</text>
+    <text x="90" y="492" fill="#556655" font-size="6">GPIO 5 → GND</text>
+
+    <!-- BTN_PARAM = GPIO 2 -->
+    <rect x="48" y="507" width="88" height="28" rx="4" fill="#0a1f0a" stroke="#1e5c1e" stroke-width="1"/>
+    <circle cx="72" cy="521" r="8" fill="#0f280f" stroke="#aaaaaa" stroke-width="1.5"/>
+    <circle cx="72" cy="521" r="4" fill="#2a4a2a"/>
+    <text x="90" y="517" fill="#aaaaaa" font-size="6.5" font-weight="bold">BTN_PARAM</text>
+    <text x="90" y="527" fill="#556655" font-size="6">GPIO 2 → GND</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- FILS DE CONNEXION                                      -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <!-- VCC : 3.3V (rouge) ESP.3V3 → TFT.VCC(p6) -->
+  <polyline points="316,202 270,202 270,312 121,312" fill="none" stroke="#ff4444" stroke-width="1.8" stroke-dasharray="none" opacity="0.85"/>
+  <circle cx="316" cy="202" r="3" fill="#ff4444" filter="url(#glow)"/>
+  <circle cx="121" cy="312" r="3" fill="#ff4444" filter="url(#glow)"/>
+
+  <!-- LED via 33Ω : 3.3V → LED(p7) (orange pointillé) -->
+  <polyline points="270,202 270,290 148,290 148,312 132,312" fill="none" stroke="#ffaa00" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.75"/>
+  <circle cx="270" cy="202" r="2.5" fill="#ffaa00" opacity="0.6"/>
+  <circle cx="132" cy="312" r="3" fill="#ffaa00" filter="url(#glow)"/>
+  <!-- nœud junction sur 3.3V -->
+  <circle cx="270" cy="202" r="3.5" fill="none" stroke="#ff4444" stroke-width="1" opacity="0.5"/>
+
+  <!-- GND (gris foncé) ESP.GND → TFT.GND(p8) -->
+  <polyline points="316,214 260,214 260,318 143,318" fill="none" stroke="#666" stroke-width="1.8" opacity="0.7"/>
+  <circle cx="316" cy="214" r="3" fill="#666" filter="url(#glow)"/>
+  <circle cx="143" cy="318" r="3" fill="#666" filter="url(#glow)"/>
+
+  <!-- MOSI cyan : GPIO13 → DIN(p4) -->
+  <polyline points="316,226 250,226 250,306 99,306" fill="none" stroke="#00e5ff" stroke-width="1.8" opacity="0.85"/>
+  <circle cx="316" cy="226" r="3" fill="#00e5ff" filter="url(#glow)"/>
+  <circle cx="99" cy="306" r="3" fill="#00e5ff" filter="url(#glow)"/>
+
+  <!-- SCLK jaune : GPIO14 → CLK(p5) -->
+  <polyline points="316,238 240,238 240,302 110,302" fill="none" stroke="#ffeb3b" stroke-width="1.8" opacity="0.85"/>
+  <circle cx="316" cy="238" r="3" fill="#ffeb3b" filter="url(#glow)"/>
+  <circle cx="110" cy="302" r="3" fill="#ffeb3b" filter="url(#glow)"/>
+
+  <!-- CS orange : GPIO15 → CS(p2) -->
+  <polyline points="316,250 230,250 230,298 77,298" fill="none" stroke="#ff9800" stroke-width="1.8" opacity="0.85"/>
+  <circle cx="316" cy="250" r="3" fill="#ff9800" filter="url(#glow)"/>
+  <circle cx="77" cy="298" r="3" fill="#ff9800" filter="url(#glow)"/>
+
+  <!-- RST vert : GPIO16 → RST(p1) -->
+  <polyline points="316,262 220,262 220,296 66,296" fill="none" stroke="#69ff47" stroke-width="1.8" opacity="0.85"/>
+  <circle cx="316" cy="262" r="3" fill="#69ff47" filter="url(#glow)"/>
+  <circle cx="66" cy="296" r="3" fill="#69ff47" filter="url(#glow)"/>
+
+  <!-- D/C rose : GPIO17 → D/C(p3) -->
+  <polyline points="316,274 210,274 210,300 88,300" fill="none" stroke="#ff80ab" stroke-width="1.8" opacity="0.85"/>
+  <circle cx="316" cy="274" r="3" fill="#ff80ab" filter="url(#glow)"/>
+  <circle cx="88" cy="300" r="3" fill="#ff80ab" filter="url(#glow)"/>
+
+  <!-- BTN_PREV GPIO5 → bouton -->
+  <polyline points="316,298 200,298 200,486 136,486" fill="none" stroke="#aaaaaa" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
+  <circle cx="316" cy="298" r="3" fill="#aaaaaa" opacity="0.7"/>
+
+  <!-- BTN_PARAM GPIO2 → bouton -->
+  <polyline points="316,310 195,310 195,521 136,521" fill="none" stroke="#aaaaaa" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
+  <circle cx="316" cy="310" r="3" fill="#aaaaaa" opacity="0.7"/>
+
+  <!-- GND boutons (bas) -->
+  <line x1="316" y1="334" x2="200" y2="334" stroke="#555" stroke-width="1.3" stroke-dasharray="3,3" opacity="0.5"/>
+  <polyline points="200,334 200,540 48,540 48,451" fill="none" stroke="#555" stroke-width="1.3" stroke-dasharray="3,3" opacity="0.5"/>
+  <circle cx="316" cy="334" r="2.5" fill="#555"/>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- LÉGENDE FILS                                           -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <g id="legend" transform="translate(620, 80)">
+    <rect x="0" y="0" width="260" height="320" rx="6" fill="#050f05" stroke="#1a4a1a" stroke-width="1"/>
+    <rect x="0" y="0" width="260" height="22" rx="6" fill="#0a1f0a"/>
+    <rect x="0" y="16" width="260" height="6" fill="#0a1f0a"/>
+    <text x="130" y="15" text-anchor="middle" fill="#4aaa4a" font-size="9" letter-spacing="3">LÉGENDE</text>
+
+    <!-- Fil rouge -->
+    <line x1="14" y1="42" x2="50" y2="42" stroke="#ff4444" stroke-width="2.5"/>
+    <circle cx="14" cy="42" r="3" fill="#ff4444" filter="url(#glow)"/>
+    <circle cx="50" cy="42" r="3" fill="#ff4444" filter="url(#glow)"/>
+    <text x="60" y="46" fill="#cc4444" font-size="8.5">3.3V  →  VCC (p6)</text>
+
+    <!-- Fil gris -->
+    <line x1="14" y1="60" x2="50" y2="60" stroke="#666" stroke-width="2.5"/>
+    <circle cx="14" cy="60" r="3" fill="#666"/>
+    <circle cx="50" cy="60" r="3" fill="#666"/>
+    <text x="60" y="64" fill="#888" font-size="8.5">GND  →  GND (p8)</text>
+
+    <!-- Fil cyan -->
+    <line x1="14" y1="78" x2="50" y2="78" stroke="#00e5ff" stroke-width="2.5"/>
+    <circle cx="14" cy="78" r="3" fill="#00e5ff" filter="url(#glow)"/>
+    <circle cx="50" cy="78" r="3" fill="#00e5ff" filter="url(#glow)"/>
+    <text x="60" y="82" fill="#00bcd4" font-size="8.5">GPIO 13  →  DIN (p4)</text>
+    <text x="60" y="91" fill="#005a6a" font-size="7">HSPI MOSI</text>
+
+    <!-- Fil jaune -->
+    <line x1="14" y1="104" x2="50" y2="104" stroke="#ffeb3b" stroke-width="2.5"/>
+    <circle cx="14" cy="104" r="3" fill="#ffeb3b" filter="url(#glow)"/>
+    <circle cx="50" cy="104" r="3" fill="#ffeb3b" filter="url(#glow)"/>
+    <text x="60" y="108" fill="#cccc00" font-size="8.5">GPIO 14  →  CLK (p5)</text>
+    <text x="60" y="117" fill="#5a5a00" font-size="7">HSPI SCLK</text>
+
+    <!-- Fil orange -->
+    <line x1="14" y1="130" x2="50" y2="130" stroke="#ff9800" stroke-width="2.5"/>
+    <circle cx="14" cy="130" r="3" fill="#ff9800" filter="url(#glow)"/>
+    <circle cx="50" cy="130" r="3" fill="#ff9800" filter="url(#glow)"/>
+    <text x="60" y="134" fill="#cc7700" font-size="8.5">GPIO 15  →  CS  (p2)</text>
+
+    <!-- Fil vert -->
+    <line x1="14" y1="148" x2="50" y2="148" stroke="#69ff47" stroke-width="2.5"/>
+    <circle cx="14" cy="148" r="3" fill="#69ff47" filter="url(#glow)"/>
+    <circle cx="50" cy="148" r="3" fill="#69ff47" filter="url(#glow)"/>
+    <text x="60" y="152" fill="#55cc33" font-size="8.5">GPIO 16  →  RST (p1)</text>
+
+    <!-- Fil rose -->
+    <line x1="14" y1="166" x2="50" y2="166" stroke="#ff80ab" stroke-width="2.5"/>
+    <circle cx="14" cy="166" r="3" fill="#ff80ab" filter="url(#glow)"/>
+    <circle cx="50" cy="166" r="3" fill="#ff80ab" filter="url(#glow)"/>
+    <text x="60" y="170" fill="#cc5577" font-size="8.5">GPIO 17  →  D/C (p3)</text>
+
+    <!-- Fil orange pointillé LED -->
+    <line x1="14" y1="184" x2="50" y2="184" stroke="#ffaa00" stroke-width="2" stroke-dasharray="4,3"/>
+    <circle cx="14" cy="184" r="3" fill="#ffaa00" opacity="0.8"/>
+    <circle cx="50" cy="184" r="3" fill="#ffaa00" opacity="0.8"/>
+    <text x="60" y="188" fill="#aa7700" font-size="8.5">3.3V + 33Ω  →  LED (p7)</text>
+
+    <!-- Fil blanc pointillé boutons -->
+    <line x1="14" y1="202" x2="50" y2="202" stroke="#aaa" stroke-width="1.8" stroke-dasharray="4,3"/>
+    <circle cx="14" cy="202" r="3" fill="#aaa" opacity="0.7"/>
+    <circle cx="50" cy="202" r="3" fill="#aaa" opacity="0.7"/>
+    <text x="60" y="206" fill="#888" font-size="8.5">GPIO 5   →  BTN_PREV</text>
+    <text x="60" y="215" fill="#444" font-size="7">(+ résistance pullup interne)</text>
+
+    <line x1="14" y1="228" x2="50" y2="228" stroke="#aaa" stroke-width="1.8" stroke-dasharray="4,3"/>
+    <circle cx="14" cy="228" r="3" fill="#aaa" opacity="0.7"/>
+    <circle cx="50" cy="228" r="3" fill="#aaa" opacity="0.7"/>
+    <text x="60" y="232" fill="#888" font-size="8.5">GPIO 2   →  BTN_PARAM</text>
+
+    <!-- Note BOOT -->
+    <rect x="8" y="246" width="244" height="22" rx="3" fill="#0f1f0f" stroke="#2a5a2a" stroke-width="0.8"/>
+    <text x="14" y="256" fill="#4aaa4a" font-size="7.5">★  GPIO 0 = bouton BOOT (déjà sur carte)</text>
+    <text x="14" y="265" fill="#2a6a2a" font-size="6.5">   BTN_NEXT sans câblage supplémentaire</text>
+
+    <!-- Note HSPI -->
+    <rect x="8" y="274" width="244" height="22" rx="3" fill="#050a1a" stroke="#1a2a5a" stroke-width="0.8"/>
+    <text x="14" y="284" fill="#4a6aaa" font-size="7.5">⚡  Bus HSPI choisi pour éviter les conflits</text>
+    <text x="14" y="293" fill="#2a3a6a" font-size="6.5">   GPIO 18/23 réservés à la caméra OV2640</text>
+
+    <!-- Note alimentation -->
+    <rect x="8" y="302" width="244" height="14" rx="3" fill="#1a0505" stroke="#4a1010" stroke-width="0.8"/>
+    <text x="14" y="312" fill="#aa4444" font-size="7">⚠  Ne pas utiliser 5V sur le TFT (logique 3.3V)</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TABLE CONNEXIONS (bas)                                 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <g transform="translate(330, 530)">
+    <rect x="0" y="0" width="530" height="78" rx="5" fill="#050f05" stroke="#1a3a1a" stroke-width="1"/>
+    <rect x="0" y="0" width="530" height="16" rx="5" fill="#0a1f0a"/>
+    <rect x="0" y="10" width="530" height="6" fill="#0a1f0a"/>
+    <text x="265" y="11" text-anchor="middle" fill="#2a8a2a" font-size="8" letter-spacing="3">TABLEAU DES CONNEXIONS</text>
+
+    <!-- Headers -->
+    <text x="15"  y="28" fill="#4aaa4a" font-size="7.5" font-weight="bold">ESP32</text>
+    <text x="100" y="28" fill="#4aaa4a" font-size="7.5" font-weight="bold">TFT (broche)</text>
+    <text x="220" y="28" fill="#4aaa4a" font-size="7.5" font-weight="bold">Signal</text>
+    <text x="305" y="28" fill="#4aaa4a" font-size="7.5" font-weight="bold">Bus</text>
+    <line x1="5" y1="31" x2="525" y2="31" stroke="#1a4a1a" stroke-width="0.8"/>
+
+    <!-- Row 1 -->
+    <text x="15"  y="42" fill="#888" font-size="7">3.3V</text>
+    <text x="100" y="42" fill="#ff4444" font-size="7">VCC (p6)</text>
+    <text x="220" y="42" fill="#666" font-size="7">Alimentation</text>
+    <text x="305" y="42" fill="#444" font-size="7">PWR</text>
+    <!-- Row 2 -->
+    <text x="15"  y="52" fill="#888" font-size="7">GND</text>
+    <text x="100" y="52" fill="#666" font-size="7">GND (p8)</text>
+    <text x="220" y="52" fill="#666" font-size="7">Masse</text>
+    <text x="305" y="52" fill="#444" font-size="7">PWR</text>
+    <!-- Row 3 -->
+    <text x="15"  y="62" fill="#888" font-size="7">GPIO 13</text>
+    <text x="100" y="62" fill="#00e5ff" font-size="7">DIN (p4)</text>
+    <text x="220" y="62" fill="#666" font-size="7">MOSI data</text>
+    <text x="305" y="62" fill="#006688" font-size="7">HSPI</text>
+    <!-- Row 4 -->
+    <text x="15"  y="72" fill="#888" font-size="7">GPIO 14</text>
+    <text x="100" y="72" fill="#ffeb3b" font-size="7">CLK (p5)</text>
+    <text x="220" y="72" fill="#666" font-size="7">Horloge SPI</text>
+    <text x="305" y="72" fill="#006688" font-size="7">HSPI</text>
+
+    <!-- col 2 -->
+    <line x1="270" y1="31" x2="270" y2="78" stroke="#1a3a1a" stroke-width="0.5"/>
+    <text x="285" y="42" fill="#888" font-size="7">GPIO 15</text>
+    <text x="370" y="42" fill="#ff9800" font-size="7">CS (p2)</text>
+    <text x="455" y="42" fill="#666" font-size="7">Chip Select</text>
+    <text x="285" y="52" fill="#888" font-size="7">GPIO 16</text>
+    <text x="370" y="52" fill="#69ff47" font-size="7">RST (p1)</text>
+    <text x="455" y="52" fill="#666" font-size="7">Reset</text>
+    <text x="285" y="62" fill="#888" font-size="7">GPIO 17</text>
+    <text x="370" y="62" fill="#ff80ab" font-size="7">D/C (p3)</text>
+    <text x="455" y="62" fill="#666" font-size="7">Data/Command</text>
+    <text x="285" y="72" fill="#888" font-size="7">3.3V + 33Ω</text>
+    <text x="370" y="72" fill="#ffaa00" font-size="7">LED (p7)</text>
+    <text x="455" y="72" fill="#666" font-size="7">Rétroéclairage</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- WATERMARK / VERSION                                    -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <text x="890" y="615" text-anchor="end" fill="#1a3a1a" font-size="7" letter-spacing="1">VISION AID v1.0 — ESP32-WROVER + ST7735 — HSPI</text>
+</svg>
